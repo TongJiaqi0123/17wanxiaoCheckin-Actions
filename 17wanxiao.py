@@ -40,6 +40,7 @@ def get_post_json(jsons):
         # print(data)
         post_dict = {
             "areaStr": data['areaStr'],
+            "jtzd": data['jtzd'],
             "deptStr": data['deptStr'],
             "deptid": data['deptStr']['deptid'],
             "customerid": data['customerid'],
