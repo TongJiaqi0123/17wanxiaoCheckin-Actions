@@ -64,6 +64,7 @@ def get_post_json(jsons):
 def receive_check_in(token, custom_id, post_dict):
     check_json = {
         "userId": post_dict['userId'],
+        "jtzd": post_dict['jtzd'], 
         "name": post_dict['name'],
         "stuNo": post_dict['stuNo'],
         "whereabouts": post_dict['whereabouts'],
