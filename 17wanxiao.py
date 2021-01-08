@@ -40,7 +40,6 @@ def get_post_json(jsons):
         # print(data)
         post_dict = {
             "areaStr": data['areaStr'],
-            "jtzd": data['jtzd'],
             "deptStr": data['deptStr'],
             "deptid": data['deptStr']['deptid'],
             "customerid": data['customerid'],
@@ -64,7 +63,6 @@ def get_post_json(jsons):
 def receive_check_in(token, custom_id, post_dict):
     check_json = {
         "userId": post_dict['userId'],
-        "jtzd": post_dict['jtzd'], 
         "name": post_dict['name'],
         "stuNo": post_dict['stuNo'],
         "whereabouts": post_dict['whereabouts'],
@@ -145,7 +143,6 @@ def get_recall_data(token):
 def healthy_check_in(username, token, post_dict):
     check_json = {"businessType": "epmpics", "method": "submitUpInfo",
                   "jsonData": {"deptStr": post_dict['deptStr'], "areaStr": post_dict['areaStr'],
-                               "jtzd": post_dict['jtzd'], 
                                "reportdate": round(time.time() * 1000), "customerid": post_dict['customerid'],
                                "deptid": post_dict['deptid'], "source": "app",
                                "templateid": post_dict['templateid'], "stuNo": post_dict['stuNo'],
@@ -171,7 +168,6 @@ def healthy_check_in(username, token, post_dict):
 def campus_check_in(username, token, post_dict, id):
     check_json = {"businessType": "epmpics", "method": "submitUpInfoSchool",
                   "jsonData": {"deptStr": post_dict['deptStr'],
-                               "jtzd": post_dict['jtzd'],
                                "areaStr": post_dict['areaStr'],
                                "reportdate": round(time.time() * 1000), "customerid": post_dict['customerid'],
                                "deptid": post_dict['deptid'], "source": "app",
