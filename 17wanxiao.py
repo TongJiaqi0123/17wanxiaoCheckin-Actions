@@ -379,7 +379,9 @@ def run():
                 if not name:
                     name = check['post_dict']['name']
                 log_info.append(f"""#### {name}{check['type']}打卡信息：
+
 {check['res']}
+```""")
     server_push(sckey, "\n".join(log_info))
 
 
